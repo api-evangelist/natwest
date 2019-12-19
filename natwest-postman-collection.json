@@ -1,0 +1,151 @@
+{
+    "id": "42f0a260eb53876565589fff691dffc2",
+    "name": "NatWest",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "5c3b51949b9a3b8c81f4c844b2a51758",
+            "name": "Get ATMs",
+            "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/atms\/",
+            "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can provide multiple ATMs.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "rawModeData": ""
+        },
+        {
+            "id": "ddc9612ffcff1cc761502031ded10061",
+            "name": "Get Branches",
+            "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/branches\/",
+            "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple branches. ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "rawModeData": ""
+        },
+        {
+            "id": "b09fe0f6a1524af54ba2b27d8dfc83ad",
+            "name": "Get Current Personal Accounts",
+            "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/personal-current-accounts\/",
+            "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple PCA products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "rawModeData": ""
+        },
+        {
+            "id": "7cf25efad74a95433630586668ed5f9d",
+            "name": "Get Current Business Accounts",
+            "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/business-current-accounts\/",
+            "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple BCA products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "rawModeData": ""
+        },
+        {
+            "id": "d42f765b40821ac0f44d398328359e74",
+            "name": "Get Unsecured SME Loans",
+            "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/unsecured-sme-loans\/",
+            "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Unsecured Loan products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "rawModeData": ""
+        },
+        {
+            "id": "6132cb75491a33af22e39b8a3084426c",
+            "name": "Get Commercial Credit Cards",
+            "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/commercial-credit-cards\/",
+            "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Commercial Credit Card products.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "rawModeData": ""
+        }
+    ]
+}
