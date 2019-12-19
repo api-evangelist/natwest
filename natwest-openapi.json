@@ -1,0 +1,150 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "NatWest",
+        "description": "This is an OpenAPI definition for the standard set of Open Banking (http:\/\/openbankingapis.io\/) APIs for NatWest.",
+        "termsOfService": "https:\/\/www.openbanking.org.uk\/open-licence\/"
+    },
+    "servers": [
+        "httpsopenapi.natwest.comopen-banking\/v2.1\/"
+    ],
+    "paths": {
+        "atms\/": {
+            "get": {
+                "summary": "Get ATMs",
+                "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can provide multiple ATMs.",
+                "operationId": "GetATMS",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "branches\/": {
+            "get": {
+                "summary": "Get Branches",
+                "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple branches. ",
+                "operationId": "GetBranches",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "personal-current-accounts\/": {
+            "get": {
+                "summary": "Get Current Personal Accounts",
+                "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple PCA products.",
+                "operationId": "GetCurrentPersonalAccounts",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "business-current-accounts\/": {
+            "get": {
+                "summary": "Get Current Business Accounts",
+                "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple BCA products.",
+                "operationId": "GetCurentBusinessAccounts",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "unsecured-sme-loans\/": {
+            "get": {
+                "summary": "Get Unsecured SME Loans",
+                "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Unsecured Loan products.",
+                "operationId": "PathOperation",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "commercial-credit-cards\/": {
+            "get": {
+                "summary": "Get Commercial Credit Cards",
+                "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Commercial Credit Card products.",
+                "operationId": "GetCommercialCreditCards",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "atms": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "branches": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "personal_current_accounts": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "business_current_accounts": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "unsecured_sme_loans": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "commercial_credit_cards": {
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "data": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
