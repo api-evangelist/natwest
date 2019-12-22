@@ -1,5 +1,5 @@
 {
-    "id": "42f0a260eb53876565589fff691dffc2",
+    "id": "2c7073cc631027f67d230f3ccd45db3f",
     "name": "NatWest",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "5c3b51949b9a3b8c81f4c844b2a51758",
+            "id": "5cd9053d13dc3cca1029a43427dc2f00",
             "name": "Get ATMs",
             "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/atms\/",
             "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can provide multiple ATMs.",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "collectionId": "2c7073cc631027f67d230f3ccd45db3f",
             "rawModeData": ""
         },
         {
-            "id": "ddc9612ffcff1cc761502031ded10061",
+            "id": "39fc84d401062608c977d98537f35df2",
             "name": "Get Branches",
             "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/branches\/",
             "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple branches. ",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "collectionId": "2c7073cc631027f67d230f3ccd45db3f",
             "rawModeData": ""
         },
         {
-            "id": "b09fe0f6a1524af54ba2b27d8dfc83ad",
+            "id": "14fe5a3684bd93e300c2996a79a9623c",
             "name": "Get Current Personal Accounts",
             "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/personal-current-accounts\/",
             "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple PCA products.",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "collectionId": "2c7073cc631027f67d230f3ccd45db3f",
             "rawModeData": ""
         },
         {
-            "id": "7cf25efad74a95433630586668ed5f9d",
+            "id": "09079843fb14f41804b16231fdce3244",
             "name": "Get Current Business Accounts",
             "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/business-current-accounts\/",
             "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple BCA products.",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "collectionId": "2c7073cc631027f67d230f3ccd45db3f",
             "rawModeData": ""
         },
         {
-            "id": "d42f765b40821ac0f44d398328359e74",
+            "id": "a0016c80e68021e30cfdfbe43541eaed",
             "name": "Get Unsecured SME Loans",
             "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/unsecured-sme-loans\/",
             "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Unsecured Loan products.",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "collectionId": "2c7073cc631027f67d230f3ccd45db3f",
             "rawModeData": ""
         },
         {
-            "id": "6132cb75491a33af22e39b8a3084426c",
+            "id": "2e0ecd2cd82e23901ef6c7cb06ffee76",
             "name": "Get Commercial Credit Cards",
             "url": "httpsopenapi.natwest.comopen-banking\/v2.1\/commercial-credit-cards\/",
             "description": "This endpoint can contain multiple brands owned by a particular banking group. Each brand can own multiple SME Commercial Credit Card products.",
@@ -144,7 +144,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "42f0a260eb53876565589fff691dffc2",
+            "collectionId": "2c7073cc631027f67d230f3ccd45db3f",
             "rawModeData": ""
         }
     ]
