@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for NatWest Confirmation of Funds API
+  version: 1.0.0
+extends: openapi/natwest-confirmation-of-funds-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: natwest
+    x-apievangelist-standard: OBIE Read/Write v3.1.11
+    x-apievangelist-auth: FAPI 1.0 Advanced OAuth2/OIDC + mutual-TLS + PSD2 SCA
+    x-apievangelist-scope: fundsconfirmations
+    x-apievangelist-sandbox: https://api.sandbox.natwest.com/open-banking/v3.1/cbpii
+- target: $.servers
+  update:
+  - url: https://api.sandbox.natwest.com/open-banking/v3.1/cbpii
+    description: Sandbox resource base (added by API Evangelist)

@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/*; https://api.sandbox.natwest.com/.well-known/openid-configuration
+docs: https://www.bankofapis.com/documentation/security
+schemes:
+- name: TPPOAuth2Security
+  flow: clientCredentials
+  tokenUrl: https://ob.sandbox.natwest.com/token
+  description: TPP client-credentials flow with the ASPSP.
+- name: PSUOAuth2Security
+  flow: authorizationCode
+  authorizationUrl: https://api.sandbox.natwest.com/authorize
+  tokenUrl: https://ob.sandbox.natwest.com/token
+  description: PSU authorisation-code flow with PSD2 SCA.
+scopes:
+- scope: openid
+  description: OpenID Connect authentication (required for the PSU authorization_code flow).
+  flows: [authorizationCode]
+- scope: accounts
+  description: Read account and transaction information (AISP).
+  flows: [authorizationCode, clientCredentials]
+  sources: [openapi/natwest-account-transaction-openapi.yml]
+- scope: payments
+  description: Initiate payments (PISP).
+  flows: [authorizationCode, clientCredentials]
+  sources: [openapi/natwest-payment-initiation-openapi.yml]
+- scope: fundsconfirmations
+  description: Confirmation of funds entitlement (CBPII).
+  flows: [authorizationCode, clientCredentials]
+  sources: [openapi/natwest-confirmation-of-funds-openapi.yml]
+- scope: profile
+  description: PSU profile claims exposed via OIDC.
+  flows: [authorizationCode]
+notes: >-
+  Scope list confirmed against the live sandbox OIDC discovery document
+  (scopes_supported: openid, payments, accounts, fundsconfirmations, profile). The
+  spec token/authorization URLs are OBIE placeholders (authserver.example); the real
+  sandbox endpoints are shown above.

@@ -96,6 +96,59 @@ apis:
     available on a customer account under the "fundsconfirmations" OAuth scope,
     secured with FAPI OAuth2/OIDC, PSD2 SCA, and mutual-TLS.
 common:
+- type: WellKnown
+  url: well-known/natwest-well-known.yml
+- type: SecurityTxt
+  url: well-known/natwest-security.txt
+- type: Lifecycle
+  url: lifecycle/natwest-lifecycle.yml
+- type: StatusPage
+  url: https://www.bankofapis.com/performance/service-interruptions
+- type: Deprecation
+  url: https://www.bankofapis.com/updates-and-releases
+- type: ChangeLog
+  url: changelog/natwest-changelog.yml
+- type: Conformance
+  url: conformance/natwest-conformance.yml
+- type: Compliance
+  url: https://www.bankofapis.com/products/natwest-group-open-banking/fca-service-metrics
+- type: ErrorCatalog
+  url: errors/natwest-error-codes.yml
+- type: Conventions
+  url: conventions/natwest-conventions.yml
+- type: Idempotency
+  url: conventions/natwest-conventions.yml
+- type: DataModel
+  url: data-model/natwest-data-model.yml
+- type: Sandbox
+  url: sandbox/natwest-sandbox.yml
+- type: MCPServer
+  url: mcp/natwest-mcp.yml
+- type: LLMsTxt
+  url: llms/natwest-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  name: Account and Transaction overlay
+  url: overlays/natwest-account-transaction-overlay.yaml
+- type: Overlay
+  name: Payment Initiation overlay
+  url: overlays/natwest-payment-initiation-overlay.yaml
+- type: Overlay
+  name: Confirmation of Funds overlay
+  url: overlays/natwest-confirmation-of-funds-overlay.yaml
+- type: Security
+  url: https://bugcrowd.com/natwest-vdp
+- type: VulnerabilityDisclosure
+  url: security/natwest-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/natwest-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/natwest-agentic-access.yml
+- type: OAuthScopes
+  url: scopes/natwest-scopes.yml
+- type: Authentication
+  url: authentication/natwest-authentication.yml
 - type: Website
   url: https://www.natwest.com/
 - type: DeveloperPortal

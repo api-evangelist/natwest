@@ -1,0 +1,55 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/*; https://api.sandbox.natwest.com/.well-known/openid-configuration
+standard: OBIE UK Open Banking Read/Write API Standard v3.1.11
+authentication:
+  style: FAPI 1.0 Advanced OAuth2/OIDC + mutual-TLS
+  consent_model: >-
+    Two-stage consent: TPP creates a consent (client_credentials), the PSU authorises
+    it via authorization_code with PSD2 SCA, then the TPP acts on the granted consent.
+  ref: authentication/natwest-authentication.yml
+idempotency:
+  supported: true
+  header: x-idempotency-key
+  scope: All payment and consent POST operations (PISP domestic/international/file/standing-order, and consent creation).
+  retention: 24 hours
+  semantics: >-
+    Every request is processed only once per x-idempotency-key; the key is valid for
+    24 hours. Replaying the same key returns the original result rather than creating
+    a duplicate payment.
+  ref: openapi parameter x-idempotency-key
+message_signing:
+  supported: true
+  header: x-jws-signature
+  algorithm: PS256 (detached JWS)
+  scope: Payment initiation and consent request/response bodies.
+request_tracing:
+  header: x-fapi-interaction-id
+  note: >-
+    FAPI interaction id echoed on responses for end-to-end correlation; x-fapi-auth-date
+    and x-fapi-customer-ip-address carry PSU context.
+pagination:
+  style: link-based (OBIE)
+  response_fields:
+    Links: Self, First, Prev, Next, Last hypermedia links.
+    Meta: TotalPages plus FirstAvailableDateTime / LastAvailableDateTime for transaction windows.
+  query_params: [fromBookingDateTime, toBookingDateTime]
+versioning:
+  style: uri-path
+  current: v3.1
+  ref: lifecycle/natwest-lifecycle.yml
+error_envelope:
+  schema: OBErrorResponse1 (Code / Id / Message / Errors[])
+  code_registry: UK.OBIE.* namespaced error codes
+  ref: errors/natwest-error-codes.yml
+rate_limit_signaling:
+  status: '429 Too Many Requests on limit breach'
+  note: OBIE does not mandate rate-limit response headers; limits are enforced per ASPSP policy.
+required_headers:
+- Authorization (bearer, certificate-bound)
+- x-fapi-auth-date
+- x-fapi-customer-ip-address
+- x-fapi-interaction-id
+- x-idempotency-key (payment/consent writes)
+- x-jws-signature (payment/consent writes)
+- x-customer-user-agent

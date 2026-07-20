@@ -1,0 +1,40 @@
+# NatWest Group — Bank of APIs (Open Banking)
+
+> NatWest Group's "Bank of APIs" developer platform publishes the UK Open Banking
+> (CMA9 / PSD2) APIs implemented to the OBIE Read/Write API Standard v3.1.11:
+> Account & Transaction Information (AISP), Payment Initiation (PISP), and
+> Confirmation of Funds (CBPII). Access is FAPI 1.0 Advanced OAuth2/OIDC with PSD2
+> strong customer authentication, mutual-TLS client authentication, dynamic client
+> registration, and OBIE/eIDAS certificates. A self-service sandbox is available.
+
+## APIs
+
+- [Account and Transaction API](https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb): AISP — accounts, balances, transactions, beneficiaries, standing orders, direct debits, statements (accounts scope).
+- [Payment Initiation API](https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb): PISP — domestic, scheduled, international, standing-order, and file payments (payments scope).
+- [Confirmation of Funds API](https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb): CBPII — funds-confirmation consents and checks (fundsconfirmations scope).
+
+## Specs
+
+- [Account and Transaction OpenAPI](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/openapi/natwest-account-transaction-openapi.yml)
+- [Payment Initiation OpenAPI](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/openapi/natwest-payment-initiation-openapi.yml)
+- [Confirmation of Funds OpenAPI](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/openapi/natwest-confirmation-of-funds-openapi.yml)
+
+## Auth & Conventions
+
+- [Authentication profile (FAPI/PSD2/mTLS)](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/authentication/natwest-authentication.yml)
+- [OAuth scopes](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/scopes/natwest-scopes.yml)
+- [API conventions (idempotency, JWS signing, pagination, tracing)](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/conventions/natwest-conventions.yml)
+- [Error codes (OBIE UK.OBIE.* registry)](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/errors/natwest-error-codes.yml)
+- [OIDC discovery (sandbox)](https://api.sandbox.natwest.com/.well-known/openid-configuration)
+
+## Docs
+
+- [Bank of APIs Developer Portal](https://www.bankofapis.com/)
+- [Documentation](https://www.bankofapis.com/documentation)
+- [Getting Started](https://www.bankofapis.com/getting-started)
+- [Security / Authentication](https://www.bankofapis.com/documentation/security)
+- [Sandbox](https://developer.sandbox.natwest.com/)
+- [Updates and Releases (changelog)](https://www.bankofapis.com/updates-and-releases)
+- [Service Interruptions / Status](https://www.bankofapis.com/performance/service-interruptions)
+- [FCA Service Metrics](https://www.bankofapis.com/products/natwest-group-open-banking/fca-service-metrics)
+- [GitHub (bankofapis)](https://github.com/bankofapis)

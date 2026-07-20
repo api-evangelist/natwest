@@ -1,0 +1,15 @@
+generated: '2026-07-20'
+method: generated
+skills:
+- file: natwest-account-information.md
+  name: Retrieve NatWest account information (AISP)
+  api: openapi/natwest-account-transaction-openapi.yml
+  operations: [CreateAccountAccessConsents, GetAccounts, GetAccountsAccountIdBalances, GetAccountsAccountIdTransactions]
+- file: natwest-domestic-payment.md
+  name: Initiate a NatWest domestic payment (PISP)
+  api: openapi/natwest-payment-initiation-openapi.yml
+  operations: [CreateDomesticPaymentConsents, CreateDomesticPayments, GetDomesticPaymentsDomesticPaymentId]
+- file: natwest-confirmation-of-funds.md
+  name: Confirm funds availability (CBPII)
+  api: openapi/natwest-confirmation-of-funds-openapi.yml
+  operations: [CreateFundsConfirmationConsents, CreateFundsConfirmations]

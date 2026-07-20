@@ -1,0 +1,19 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for NatWest Payment Initiation API
+  version: 1.0.0
+extends: openapi/natwest-payment-initiation-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: natwest
+    x-apievangelist-standard: OBIE Read/Write v3.1.11
+    x-apievangelist-auth: FAPI 1.0 Advanced OAuth2/OIDC + mutual-TLS + PSD2 SCA
+    x-apievangelist-scope: payments
+    x-apievangelist-idempotency-key: x-idempotency-key
+    x-apievangelist-message-signing: x-jws-signature (detached JWS, PS256)
+    x-apievangelist-sandbox: https://api.sandbox.natwest.com/open-banking/v3.1/pisp
+- target: $.servers
+  update:
+  - url: https://api.sandbox.natwest.com/open-banking/v3.1/pisp
+    description: Sandbox resource base (added by API Evangelist)

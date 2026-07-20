@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.bankofapis.com/updates-and-releases
+versioning:
+  scheme: uri-path
+  current: v3.1
+  standard: OBIE UK Open Banking Read/Write API Standard
+  spec_version: 3.1.11
+  next: v4.0
+  migration_note: >-
+    Bank of APIs is rolling v4.0 endpoints across the NatWest Group brands (NatWest,
+    Royal Bank of Scotland, Ulster Bank NI, NatWest International, RBS International)
+    per Open Banking Limited's v4.0 implementation timeline; v3.1 remains available
+    during the migration window.
+  docs: https://www.bankofapis.com/updates-and-releases
+deprecation:
+  policy: >-
+    Version and endpoint deprecations are announced on the Updates and Releases page
+    and the APIs Status Page ahead of migration; the OBIE Read/Write standard governs
+    version lifecycle across the CMA9.
+  docs: https://www.bankofapis.com/updates-and-releases
+sla:
+  fca_service_metrics: https://www.bankofapis.com/products/natwest-group-open-banking/fca-service-metrics
+  performance_metrics: https://www.bankofapis.com/performance/openbanking-metrics
+  note: >-
+    As a regulated CMA9 provider, NatWest publishes FCA service-availability and
+    performance metrics rather than a commercial uptime SLA. Open Banking APIs are
+    provided free under the PSD2/CMA mandate.
+status_page: https://www.bankofapis.com/performance/service-interruptions
+status_notes: >-
+  All service updates are shared via the Bank of APIs Status Page / Service
+  Interruptions page; manual API Service Desk notification emails were discontinued
+  at end of February 2026.
+deprecated_operations: []
+notes: >-
+  No operations in the harvested OBIE v3.1.11 specs are flagged deprecated. Version
+  lifecycle is driven at the standard level (OBIE / Open Banking Limited), not per
+  operation.

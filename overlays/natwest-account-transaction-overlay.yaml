@@ -1,0 +1,18 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for NatWest Account and Transaction API
+  version: 1.0.0
+extends: openapi/natwest-account-transaction-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: natwest
+    x-apievangelist-standard: OBIE Read/Write v3.1.11
+    x-apievangelist-auth: FAPI 1.0 Advanced OAuth2/OIDC + mutual-TLS + PSD2 SCA
+    x-apievangelist-scope: accounts
+    x-apievangelist-idempotency-key: x-idempotency-key
+    x-apievangelist-sandbox: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+- target: $.servers
+  update:
+  - url: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+    description: Sandbox resource base (added by API Evangelist)

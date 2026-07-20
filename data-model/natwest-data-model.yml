@@ -1,0 +1,105 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/* (OBIE Read/Write v3.1.11 resource model)
+entities:
+- name: AccountAccessConsent
+  api: openapi/natwest-account-transaction-openapi.yml
+  id: ConsentId
+  scope: accounts
+- name: Account
+  api: openapi/natwest-account-transaction-openapi.yml
+  id: AccountId
+- name: Balance
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: Transaction
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: Beneficiary
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: StandingOrder
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: DirectDebit
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: Statement
+  api: openapi/natwest-account-transaction-openapi.yml
+  id: StatementId
+- name: Party
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: Product
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: Offer
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: ScheduledPayment
+  api: openapi/natwest-account-transaction-openapi.yml
+- name: DomesticPaymentConsent
+  api: openapi/natwest-payment-initiation-openapi.yml
+  id: ConsentId
+  scope: payments
+- name: DomesticPayment
+  api: openapi/natwest-payment-initiation-openapi.yml
+  id: DomesticPaymentId
+- name: DomesticScheduledPayment
+  api: openapi/natwest-payment-initiation-openapi.yml
+- name: DomesticStandingOrder
+  api: openapi/natwest-payment-initiation-openapi.yml
+- name: InternationalPayment
+  api: openapi/natwest-payment-initiation-openapi.yml
+- name: InternationalScheduledPayment
+  api: openapi/natwest-payment-initiation-openapi.yml
+- name: InternationalStandingOrder
+  api: openapi/natwest-payment-initiation-openapi.yml
+- name: FilePaymentConsent
+  api: openapi/natwest-payment-initiation-openapi.yml
+- name: FilePayment
+  api: openapi/natwest-payment-initiation-openapi.yml
+- name: FundsConfirmationConsent
+  api: openapi/natwest-confirmation-of-funds-openapi.yml
+  id: ConsentId
+  scope: fundsconfirmations
+- name: FundsConfirmation
+  api: openapi/natwest-confirmation-of-funds-openapi.yml
+relationships:
+- from: Account
+  to: AccountAccessConsent
+  type: belongs_to
+  via: ConsentId
+- from: Balance
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: Transaction
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: Beneficiary
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: StandingOrder
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: DirectDebit
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: Statement
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: DomesticPayment
+  to: DomesticPaymentConsent
+  type: belongs_to
+  via: ConsentId
+- from: DomesticStandingOrder
+  to: DomesticStandingOrderConsent
+  type: belongs_to
+  via: ConsentId
+- from: FundsConfirmation
+  to: FundsConfirmationConsent
+  type: belongs_to
+  via: ConsentId
+notes: >-
+  OBIE consent-first model: every account or payment resource is scoped to a prior
+  consent (ConsentId) that the PSU authorised via SCA. Account-child resources
+  (balances, transactions, beneficiaries, standing orders, direct debits, statements)
+  hang off AccountId.

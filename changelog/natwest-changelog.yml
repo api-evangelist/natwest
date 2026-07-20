@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.bankofapis.com/updates-and-releases
+scheme: standard-version (OBIE Read/Write, uri-path versioned)
+current_version: v3.1.11
+docs: https://www.bankofapis.com/updates-and-releases
+status_page: https://www.bankofapis.com/performance/service-interruptions
+entries:
+- date: '2026-02'
+  breaking: false
+  highlights:
+    - Manual API Service Desk notification emails discontinued; all service updates
+      now published exclusively via the Bank of APIs Status Page.
+- date: '2025-05'
+  version: v4.0
+  breaking: true
+  highlights:
+    - v4.0 endpoints implemented for NatWest, Royal Bank of Scotland, Ulster Bank
+      Northern Ireland, NatWest International, and RBS International, following Open
+      Banking Limited's extended v4.0 implementation deadline (end of June 2025).
+notes: >-
+  The authoritative changelog is the live Updates and Releases page; only the recent
+  window is captured here. Dated entries reflect Bank of APIs release/service
+  communications. Detailed per-release notes sit behind the developer portal.

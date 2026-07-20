@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: searched
+source: https://api.sandbox.natwest.com/.well-known/openid-configuration; openapi/*
+standards:
+- id: obie-read-write-3.1
+  name: OBIE UK Open Banking Read/Write API Standard v3.1.11
+  conforms: true
+  evidence: Harvested specs are the canonical OBIE Read/Write v3.1.11 documents NatWest implements.
+- id: psd2
+  name: EU/UK PSD2 (regulated Open Banking access)
+  conforms: true
+  evidence: Provided under the PSD2/CMA9 mandate; PSD2 SCA enforced (acr urn:openbanking:psd2:ca).
+- id: cma9
+  name: UK CMA Order (CMA9 designated bank)
+  conforms: true
+  evidence: NatWest Group is a CMA9 mandated Open Banking provider.
+- id: fapi-1-advanced
+  name: FAPI 1.0 Advanced
+  conforms: true
+  evidence: response_type 'code id_token', PS256, tls_client_auth/private_key_jwt, cert-bound tokens, request object.
+- id: oauth2
+  name: OAuth 2.0
+  conforms: true
+  evidence: openapi securitySchemes type oauth2 (authorizationCode + clientCredentials); OIDC discovery.
+- id: oidc
+  name: OpenID Connect
+  conforms: true
+  evidence: OIDC discovery document with id_token signing PS256, claims_supported, hybrid flow.
+- id: mtls
+  name: Mutual TLS client authentication (RFC 8705)
+  conforms: true
+  evidence: token_endpoint_auth_methods tls_client_auth; tls_client_certificate_bound_access_tokens true.
+- id: dcr
+  name: OAuth 2.0 Dynamic Client Registration (RFC 7591)
+  conforms: true
+  evidence: registration_endpoint published in OIDC discovery.
+- id: jws-detached-signature
+  name: OBIE detached JWS message signing
+  conforms: true
+  evidence: x-jws-signature header on payment/consent operations.
+- id: idempotency
+  name: Idempotent write operations
+  conforms: true
+  evidence: x-idempotency-key header (24h retention) on all payment/consent POSTs.
+- id: rfc9457-problem-details
+  name: RFC 9457 Problem Details
+  conforms: false
+  evidence: Errors use the OBIE OBErrorResponse1 envelope (Code/Id/Message/Errors), not application/problem+json.
+compliance_program:
+  fca_service_metrics: https://www.bankofapis.com/products/natwest-group-open-banking/fca-service-metrics
+  note: >-
+    NatWest publishes FCA service metrics and OBIE conformance as a regulated CMA9
+    provider; group-wide security certifications are managed at NatWest Group level.

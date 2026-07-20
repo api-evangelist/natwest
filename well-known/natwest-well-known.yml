@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of NatWest / Bank of APIs hosts
+hosts:
+- host: https://api.sandbox.natwest.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: natwest-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://api.natwest.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 400
+- host: https://www.natwest.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: natwest-security.txt
+- host: https://www.bankofapis.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+notes: |
+  The sandbox OpenID Connect discovery document (api.sandbox.natwest.com) is the
+  authoritative FAPI/PSD2 auth surface: OAuth2/OIDC hybrid (response_type
+  "code id_token"), grant types authorization_code/refresh_token/client_credentials,
+  token-endpoint auth tls_client_auth + private_key_jwt (PS256), dynamic client
+  registration, ACR urn:openbanking:psd2:ca, tls_client_certificate_bound_access_tokens.
+  The production api.natwest.com discovery endpoint requires a brand/context path
+  and returns 400 to a bare request. security.txt is published at the NatWest Group
+  root (www.natwest.com) and points to the NatWest Group Bugcrowd VDP.

@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: searched
+source: https://api.sandbox.natwest.com/.well-known/openid-configuration
+docs: https://www.bankofapis.com/documentation/security
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  - mutualTLS
+  oauth2_flows:
+  - authorizationCode
+  - clientCredentials
+  - refreshToken
+  fapi: true
+  psd2_sca: true
+  standard: FAPI 1.0 Advanced (OBIE Read/Write) with PSD2 strong customer authentication
+profile:
+  issuer: https://api.sandbox.natwest.com
+  authorization_endpoint: https://api.sandbox.natwest.com/authorize
+  token_endpoint: https://ob.sandbox.natwest.com/token
+  registration_endpoint: https://ob.sandbox.natwest.com/register
+  jwks_uri: https://keystore.openbankingtest.org.uk/0015800000jfwxXAAQ/0015800000jfwxXAAQ.jwks
+  scopes_supported: [openid, payments, accounts, fundsconfirmations, profile]
+  grant_types_supported: [authorization_code, refresh_token, client_credentials]
+  response_types_supported: ['code id_token']
+  response_modes_supported: [fragment]
+  acr_values_supported: ['urn:openbanking:psd2:ca']
+  token_endpoint_auth_methods_supported: [tls_client_auth, private_key_jwt]
+  id_token_signing_alg_values_supported: [PS256]
+  request_object_signing_alg_values_supported: [PS256]
+  tls_client_certificate_bound_access_tokens: true
+  claims_supported: [aud, exp, iat, iss, acr, openbanking_intent_id, sub]
+  dynamic_client_registration: true
+  certificates: OBIE / eIDAS (OBWAC transport + OBSEAL signing) certificates required
+schemes:
+- name: TPPOAuth2Security
+  type: oauth2
+  flow: clientCredentials
+  description: TPP client-credentials flow with the ASPSP (obtain a consent/token before PSU authorisation).
+  tokenUrl: https://ob.sandbox.natwest.com/token
+  sources:
+  - openapi/natwest-account-transaction-openapi.yml
+  - openapi/natwest-confirmation-of-funds-openapi.yml
+  - openapi/natwest-payment-initiation-openapi.yml
+- name: PSUOAuth2Security
+  type: oauth2
+  flow: authorizationCode
+  description: PSU authorisation-code flow with PSD2 SCA (customer approves the consent/payment).
+  authorizationUrl: https://api.sandbox.natwest.com/authorize
+  tokenUrl: https://ob.sandbox.natwest.com/token
+  sources:
+  - openapi/natwest-account-transaction-openapi.yml
+  - openapi/natwest-confirmation-of-funds-openapi.yml
+  - openapi/natwest-payment-initiation-openapi.yml
+notes: |
+  Live-verified against the sandbox OIDC discovery document. Client authentication
+  to the token endpoint is mutual-TLS (tls_client_auth) or private_key_jwt, both
+  PS256. Access tokens are certificate-bound. Every request also carries a detached
+  JWS (x-jws-signature) for message integrity on payment/consent operations, and
+  x-fapi-* headers for FAPI interaction context. Requires dynamic client
+  registration with OBIE/eIDAS certificates.

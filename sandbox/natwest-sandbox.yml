@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.sandbox.natwest.com/; https://api.sandbox.natwest.com/.well-known/openid-configuration
+environments:
+- name: sandbox
+  developer_portal: https://developer.sandbox.natwest.com/
+  resource_host: https://api.sandbox.natwest.com
+  token_host: https://ob.sandbox.natwest.com
+  base_paths:
+  - /open-banking/v3.1/aisp
+  - /open-banking/v3.1/pisp
+  - /open-banking/v3.1/cbpii
+  international_portal: https://developer.sandbox.natwestinternational.com/
+- name: production
+  resource_host: https://api.natwest.com
+  note: Live PSU data; requires FCA/PSD2 authorisation and OB directory registration.
+separation:
+  by: host
+  note: >-
+    Sandbox and production are separated by host (api.sandbox.natwest.com vs
+    api.natwest.com), not by key prefix. The sandbox is a self-service "model bank"
+    that can be consumed in under five minutes.
+test_certificates:
+  directory: https://keystore.openbankingtest.org.uk/
+  note: >-
+    Sandbox client authentication uses Open Banking Directory (Sandbox) test
+    certificates (OBWAC transport + OBSEAL signing). The sandbox jwks_uri resolves to
+    keystore.openbankingtest.org.uk. Dynamic client registration is available at
+    https://ob.sandbox.natwest.com/register.
+test_users:
+  provisioning: >-
+    Test PSU (payment service user) accounts and model-bank data are provisioned
+    through the sandbox developer portal; specific test credentials are issued per
+    developer account rather than published as fixed values.
+notes: >-
+  No fixed/public test card numbers or PSU passwords are published; the OBIE model
+  bank issues test identities per registered sandbox app. Nothing invented here.

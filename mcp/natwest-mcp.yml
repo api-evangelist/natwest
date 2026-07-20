@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/* (no official NatWest/Bank of APIs MCP server found as of 2026-07-20)
+server:
+  name: natwest-open-banking
+  transport: http
+  note: >-
+    Candidate only. NatWest does not publish a hosted MCP server. These tools map
+    OBIE read/write operations; any real deployment must enforce FAPI OAuth2 + PSD2
+    SCA consent, mutual-TLS, and x-jws-signature on writes (see conventions/).
+tools:
+- name: list_accounts
+  description: List accounts the PSU has consented to share.
+  source_operation: openapi/natwest-account-transaction-openapi.yml#GetAccounts
+- name: get_account
+  description: Get details for a single account.
+  source_operation: openapi/natwest-account-transaction-openapi.yml#GetAccountsAccountId
+- name: get_account_balances
+  description: Get balances for an account.
+  source_operation: openapi/natwest-account-transaction-openapi.yml#GetAccountsAccountIdBalances
+- name: get_account_transactions
+  description: Get transactions for an account.
+  source_operation: openapi/natwest-account-transaction-openapi.yml#GetAccountsAccountIdTransactions
+- name: get_account_beneficiaries
+  description: Get beneficiaries for an account.
+  source_operation: openapi/natwest-account-transaction-openapi.yml#GetAccountsAccountIdBeneficiaries
+- name: get_account_standing_orders
+  description: Get standing orders for an account.
+  source_operation: openapi/natwest-account-transaction-openapi.yml#GetAccountsAccountIdStandingOrders
+- name: create_account_access_consent
+  description: Create an account access consent (accounts scope).
+  source_operation: openapi/natwest-account-transaction-openapi.yml#CreateAccountAccessConsents
+- name: create_domestic_payment_consent
+  description: Create a domestic payment consent for PSU authorisation.
+  source_operation: openapi/natwest-payment-initiation-openapi.yml#CreateDomesticPaymentConsents
+- name: create_domestic_payment
+  description: Initiate a domestic payment against an authorised consent (idempotent).
+  source_operation: openapi/natwest-payment-initiation-openapi.yml#CreateDomesticPayments
+- name: get_domestic_payment
+  description: Get the status of a domestic payment.
+  source_operation: openapi/natwest-payment-initiation-openapi.yml#GetDomesticPaymentsDomesticPaymentId
+- name: create_international_payment
+  description: Initiate an international payment against an authorised consent.
+  source_operation: openapi/natwest-payment-initiation-openapi.yml#CreateInternationalPayments
+- name: create_funds_confirmation_consent
+  description: Create a funds-confirmation consent (fundsconfirmations scope).
+  source_operation: openapi/natwest-confirmation-of-funds-openapi.yml#CreateFundsConfirmationConsents
+- name: check_funds_confirmation
+  description: Confirm whether sufficient funds are available on an account.
+  source_operation: openapi/natwest-confirmation-of-funds-openapi.yml#CreateFundsConfirmations

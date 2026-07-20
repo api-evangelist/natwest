@@ -1,0 +1,96 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/natwest-payment-initiation-openapi.yml (OBErrorResponse1 / OBError1); OBIE v3.1.11
+format: obie-oberror
+envelope:
+  media_type: application/json
+  schema: OBErrorResponse1
+  fields:
+    Code: High-level textual error code categorising the errors (<=40 chars).
+    Id: Unique reference for the error instance, for audit (<=40 chars).
+    Message: Brief human-readable error message (<=500 chars).
+    Errors: Array of OBError1 detail objects (ErrorCode, Message, Path, Url).
+http_statuses:
+- status: 400
+  title: Bad Request
+  note: Malformed request / failed validation; body carries OBErrorResponse1 detail codes.
+- status: 401
+  title: Unauthorized
+  note: Missing/invalid access token or failed SCA; re-authenticate.
+- status: 403
+  title: Forbidden
+  note: Token lacks the required scope/consent for the resource.
+- status: 404
+  title: Not Found
+  note: Consent or resource id does not exist.
+- status: 405
+  title: Method Not Allowed
+- status: 406
+  title: Not Acceptable
+- status: 415
+  title: Unsupported Media Type
+- status: 429
+  title: Too Many Requests
+  note: Rate limit exceeded; back off and retry.
+- status: 500
+  title: Internal Server Error
+error_codes:
+- code: UK.OBIE.Field.Expected
+  meaning: A conditional field expected in this context is absent.
+- code: UK.OBIE.Field.Invalid
+  meaning: Field value fails validation (format/range/enum).
+- code: UK.OBIE.Field.InvalidDate
+  meaning: Date field is invalid or out of allowed range.
+- code: UK.OBIE.Field.Missing
+  meaning: A required field is missing from the request.
+- code: UK.OBIE.Field.Unexpected
+  meaning: A field was supplied that is not permitted in this context.
+- code: UK.OBIE.Header.Invalid
+  meaning: A required header is present but invalid.
+- code: UK.OBIE.Header.Missing
+  meaning: A required header (e.g. x-fapi-*, x-idempotency-key) is missing.
+- code: UK.OBIE.Reauthenticate
+  meaning: The PSU must re-authenticate (SCA) to continue.
+- code: UK.OBIE.Resource.ConsentMismatch
+  meaning: The resource does not match the granted consent.
+- code: UK.OBIE.Resource.InvalidConsentStatus
+  meaning: The consent is not in a valid status for this operation.
+- code: UK.OBIE.Resource.InvalidFormat
+  meaning: The referenced resource is in an invalid format.
+- code: UK.OBIE.Resource.NotFound
+  meaning: The referenced resource could not be found.
+- code: UK.OBIE.Rules.AfterCutOffDateTime
+  meaning: Request received after the payment cut-off time.
+- code: UK.OBIE.Rules.DuplicateReference
+  meaning: A duplicate payment/instruction reference was detected.
+- code: UK.OBIE.Signature.Invalid
+  meaning: The detached JWS signature (x-jws-signature) is invalid.
+- code: UK.OBIE.Signature.InvalidClaim
+  meaning: A claim in the JWS signature is invalid.
+- code: UK.OBIE.Signature.Malformed
+  meaning: The JWS signature is malformed.
+- code: UK.OBIE.Signature.Missing
+  meaning: The required x-jws-signature header is missing.
+- code: UK.OBIE.Signature.MissingClaim
+  meaning: A required claim is missing from the JWS signature.
+- code: UK.OBIE.Signature.Unexpected
+  meaning: A JWS signature was supplied where none was expected.
+- code: UK.OBIE.UnexpectedError
+  meaning: An unexpected/unclassified server error occurred.
+- code: UK.OBIE.Unsupported.AccountIdentifier
+  meaning: The supplied account identifier scheme is not supported.
+- code: UK.OBIE.Unsupported.AccountSecondaryIdentifier
+  meaning: The supplied secondary account identifier is not supported.
+- code: UK.OBIE.Unsupported.Currency
+  meaning: The requested currency is not supported.
+- code: UK.OBIE.Unsupported.Frequency
+  meaning: The requested standing-order/schedule frequency is not supported.
+- code: UK.OBIE.Unsupported.LocalInstrument
+  meaning: The requested payment local instrument (scheme) is not supported.
+- code: UK.OBIE.Unsupported.Scheme
+  meaning: The requested identification scheme is not supported.
+notes: >-
+  Error codes are the OBIE UK.OBIE.* namespaced registry declared in the specs'
+  OBError1.ErrorCode enum. Each OBError1 carries an optional Path (JSON Path of the
+  offending field) and Url (link to remediation docs). This is the API-level error
+  registry; it is not a card-decline code set.
