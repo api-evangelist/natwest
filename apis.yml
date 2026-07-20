@@ -1,0 +1,125 @@
+aid: natwest
+url: https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/apis.yml
+name: NatWest Group
+kind: company
+description: NatWest Group is a major UK retail and commercial bank (formerly Royal
+  Bank of Scotland Group) serving personal, business, and corporate customers across
+  the NatWest, Royal Bank of Scotland, Ulster Bank, Coutts, and NatWest International
+  brands. It operates a public developer platform branded the "Bank of APIs" that
+  publishes UK Open Banking (CMA9 / PSD2) APIs - Account and Transaction Information,
+  Payment Initiation, and Confirmation of Funds - conformant to the Open Banking
+  Implementation Entity (OBIE) Read/Write API Standard, alongside premium and
+  commercial APIs. Access is secured with FAPI-grade OAuth2/OIDC, PSD2 strong
+  customer authentication, mutual-TLS client authentication, and dynamic client
+  registration using OBIE/eIDAS certificates, with a full sandbox for onboarding
+  and testing before production.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Banking
+- Open Banking
+- Financial Services
+- Payments
+- PSD2
+- FAPI
+- Fintech
+- Account Information
+created: '2026-07-20'
+modified: '2026-07-20'
+specificationVersion: '0.19'
+apis:
+- aid: natwest:natwest-account-and-transaction-api
+  name: NatWest Account and Transaction API
+  tags:
+  - Account Information
+  - Transactions
+  - AISP
+  - Open Banking
+  - PSD2
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  properties:
+  - url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+    type: Documentation
+  - url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+    type: APIReference
+  - url: openapi/natwest-account-transaction-openapi.yml
+    type: OpenAPI
+  description: Account Information Service Provider (AISP) API conformant to the OBIE
+    Read/Write Standard v3.1.11, exposing account access consents, account details,
+    balances, transactions, beneficiaries, standing orders, direct debits, and
+    statements under the "accounts" OAuth scope. Requires FAPI OAuth2/OIDC with
+    PSD2 strong customer authentication and mutual-TLS.
+- aid: natwest:natwest-payment-initiation-api
+  name: NatWest Payment Initiation API
+  tags:
+  - Payments
+  - Payment Initiation
+  - PISP
+  - Open Banking
+  - PSD2
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/pisp
+  properties:
+  - url: https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+    type: Documentation
+  - url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+    type: APIReference
+  - url: openapi/natwest-payment-initiation-openapi.yml
+    type: OpenAPI
+  description: Payment Initiation Service Provider (PISP) API conformant to the OBIE
+    Read/Write Standard v3.1.11, supporting domestic payments (including CHAPS and
+    balance transfers), domestic scheduled payments, international payments,
+    international scheduled payments, and file payments under the "payments" OAuth
+    scope, with the customer approving each payment via PSD2 strong customer
+    authentication over FAPI OAuth2 and mutual-TLS.
+- aid: natwest:natwest-confirmation-of-funds-api
+  name: NatWest Confirmation of Funds API
+  tags:
+  - Confirmation of Funds
+  - CBPII
+  - Open Banking
+  - PSD2
+  - Card Payments
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/cbpii
+  properties:
+  - url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+    type: Documentation
+  - url: openapi/natwest-confirmation-of-funds-openapi.yml
+    type: OpenAPI
+  description: Card Based Payment Instrument Issuer (CBPII) Confirmation of Funds API
+    conformant to the OBIE Read/Write Standard v3.1.11, letting authorised providers
+    establish a funds-confirmation consent and check whether sufficient funds are
+    available on a customer account under the "fundsconfirmations" OAuth scope,
+    secured with FAPI OAuth2/OIDC, PSD2 SCA, and mutual-TLS.
+common:
+- type: Website
+  url: https://www.natwest.com/
+- type: DeveloperPortal
+  url: https://www.bankofapis.com/
+- type: Documentation
+  url: https://www.bankofapis.com/documentation
+- type: GettingStarted
+  url: https://www.bankofapis.com/getting-started
+- type: Authentication
+  url: https://www.bankofapis.com/documentation/security
+- type: GitHubOrganization
+  url: https://github.com/bankofapis
+- type: LinkedIn
+  url: https://www.linkedin.com/company/natwest-group
+- type: Blog
+  url: https://www.bankofapis.com/community/articles
+- type: Support
+  url: https://www.bankofapis.com/support
+- type: TermsOfService
+  url: https://www.bankofapis.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.bankofapis.com/privacy-notice
+- type: SignUp
+  url: https://www.bankofapis.com/register
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

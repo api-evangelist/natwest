@@ -1,0 +1,121 @@
+aid: natwest
+name: NatWest Group
+review:
+  question: Does NatWest publish a genuine, standards-conformant public API surface
+    with a sandbox and documented authentication?
+  answer: true
+  date: '2026-07-20'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    NatWest Group runs a real, mature developer platform branded the "Bank of
+    APIs" (https://www.bankofapis.com) with a self-service developer portal, a
+    working sandbox (https://developer.sandbox.natwest.com, resource host
+    https://api.sandbox.natwest.com), documentation, a service desk, and a
+    community/insights area. Its public API surface is the UK Open Banking
+    (CMA9 / PSD2) mandate implemented to the Open Banking Implementation Entity
+    (OBIE) Read/Write API Standard v3.1.x: an Account and Transaction
+    Information API (AISP), a Payment Initiation API (PISP), and a Confirmation
+    of Funds API (CBPII). The same products are exposed across the group brands
+    (NatWest/NWB, Royal Bank of Scotland/RBS, Ulster Bank/UBN, RBS
+    International/RBSI, NatWest International/NWI, Coutts). Because these APIs
+    conform to the shared OBIE standard rather than a NatWest-proprietary
+    contract, the harvested OpenAPI specifications are the canonical OBIE
+    Read/Write v3.1.11 documents that NatWest's implementation conforms to (see
+    provenance below); NatWest does not publish a materially divergent public
+    OpenAPI, and its portal serves the OBIE-derived swagger behind an
+    authenticated developer session. Authentication was verified live against
+    the sandbox OpenID Connect discovery document and is FAPI/PSD2-grade:
+    OAuth2/OIDC hybrid flow (response_type "code id_token"), grant types
+    authorization_code, refresh_token, and client_credentials, token-endpoint
+    client authentication via tls_client_auth (mutual-TLS) and private_key_jwt,
+    dynamic client registration, PSD2 strong customer authentication
+    (acr urn:openbanking:psd2:ca), and OBIE/eIDAS certificate requirements. No
+    public pricing is published because the Open Banking APIs are provided free
+    under the PSD2/CMA regulatory mandate.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+      documented: true
+      note: Account and Transaction (AISP) sandbox resource base; production under api.natwest.com.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/pisp
+      documented: true
+      note: Payment Initiation (PISP) sandbox resource base.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/cbpii
+      documented: true
+      note: Confirmation of Funds (CBPII) sandbox resource base.
+  authVerified:
+    issuer: https://api.sandbox.natwest.com
+    authorizationEndpoint: https://api.sandbox.natwest.com/authorize
+    tokenEndpoint: https://ob.sandbox.natwest.com/token
+    registrationEndpoint: https://ob.sandbox.natwest.com/register
+    scopesSupported:
+      - openid
+      - accounts
+      - payments
+      - fundsconfirmations
+      - profile
+    grantTypesSupported:
+      - authorization_code
+      - refresh_token
+      - client_credentials
+    tokenEndpointAuthMethods:
+      - tls_client_auth
+      - private_key_jwt
+    acrValuesSupported:
+      - urn:openbanking:psd2:ca
+    responseTypesSupported:
+      - code id_token
+  endpointsConfirmed:
+    - GET  https://api.sandbox.natwest.com/.well-known/openid-configuration (200)
+    - POST https://api.sandbox.natwest.com/open-banking/v3.1/aisp/account-access-consents (401 - exists, auth required)
+    - POST https://api.sandbox.natwest.com/open-banking/v3.1/pisp/domestic-payments (401 - exists, auth required)
+specProvenance:
+  standard: OBIE UK Open Banking Read/Write API Standard
+  version: 3.1.11
+  source: https://github.com/OpenBankingUK/read-write-api-specs (tag v3.1.11, dist/openapi)
+  note: |
+    NatWest's Bank of APIs Open Banking products implement the shared OBIE
+    Read/Write Standard rather than a bank-specific contract. The three specs
+    in openapi/ are the canonical OBIE v3.1.11 documents (Account & Transaction,
+    Payment Initiation, Confirmation of Funds) harvested verbatim from the
+    official OpenBankingUK repository. They are the exact standard NatWest
+    conforms to; nothing was fabricated. NatWest's own portal swagger sits
+    behind an authenticated developer session and is derived from the same
+    OBIE standard.
+sources:
+  - url: https://www.bankofapis.com/
+    type: DeveloperPortal
+    note: Bank of APIs developer portal - product catalog, docs, sandbox, service desk.
+  - url: https://www.bankofapis.com/products/natwest-group-open-banking
+    type: Documentation
+    note: NatWest Group Open Banking product family (accounts, payments, confirmation of funds).
+  - url: https://developer.sandbox.natwest.com/
+    type: Sandbox
+    note: NatWest Open Banking sandbox developer portal.
+  - url: https://api.sandbox.natwest.com/.well-known/openid-configuration
+    type: Authentication
+    note: Live OIDC discovery document confirming FAPI/PSD2 auth, mTLS, DCR, and scopes.
+  - url: https://github.com/OpenBankingUK/read-write-api-specs
+    type: OpenAPI
+    note: Canonical OBIE Read/Write API specs (v3.1.11) NatWest conforms to.
+  - url: https://github.com/bankofapis
+    type: GitHubOrganization
+    note: Bank of APIs GitHub organization (Open-Banking-API-Examples).
+actions:
+  apisYmlUpdated: true
+  openapiHarvested:
+    - openapi/natwest-account-transaction-openapi.yml
+    - openapi/natwest-payment-initiation-openapi.yml
+    - openapi/natwest-confirmation-of-funds-openapi.yml
+  reason: |
+    NatWest exposes a real, sandbox-backed, FAPI/PSD2-conformant Open Banking
+    API surface. Three OBIE v3.1.11 OpenAPI specs were harvested verbatim with
+    provenance noted. Auth model was verified live against the sandbox OIDC
+    discovery endpoint. No public plans/pricing exist (regulated free access),
+    so pricing derivation is left to the enrichment pipeline.
