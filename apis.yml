@@ -13,7 +13,19 @@ description: NatWest Group is a major UK retail and commercial bank (formerly Ro
   customer authentication, mutual-TLS client authentication, and dynamic client
   registration using OBIE/eIDAS certificates, with a full sandbox for onboarding
   and testing before production.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/natwest.png
 tags:
 - Banking
 - Open Banking
@@ -27,74 +39,454 @@ created: '2026-07-20'
 modified: '2026-07-20'
 specificationVersion: '0.19'
 apis:
-- aid: natwest:natwest-account-and-transaction-api
-  name: NatWest Account and Transaction API
-  tags:
-  - Account Information
-  - Transactions
-  - AISP
-  - Open Banking
-  - PSD2
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+- aid: natwest:natwest-account-access-api
+  name: NatWest Group Account Access API
+  description: The Account Access API from NatWest Group — 2 operation(s) for account access.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
   baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
-  properties:
-  - url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
-    type: Documentation
-  - url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
-    type: APIReference
-  - url: openapi/natwest-account-transaction-openapi.yml
-    type: OpenAPI
-  description: Account Information Service Provider (AISP) API conformant to the OBIE
-    Read/Write Standard v3.1.11, exposing account access consents, account details,
-    balances, transactions, beneficiaries, standing orders, direct debits, and
-    statements under the "accounts" OAuth scope. Requires FAPI OAuth2/OIDC with
-    PSD2 strong customer authentication and mutual-TLS.
-- aid: natwest:natwest-payment-initiation-api
-  name: NatWest Payment Initiation API
   tags:
-  - Payments
-  - Payment Initiation
-  - PISP
-  - Open Banking
-  - PSD2
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
-  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/pisp
+  - Account Access
   properties:
-  - url: https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
-    type: Documentation
-  - url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
-    type: APIReference
-  - url: openapi/natwest-payment-initiation-openapi.yml
-    type: OpenAPI
-  description: Payment Initiation Service Provider (PISP) API conformant to the OBIE
-    Read/Write Standard v3.1.11, supporting domestic payments (including CHAPS and
-    balance transfers), domestic scheduled payments, international payments,
-    international scheduled payments, and file payments under the "payments" OAuth
-    scope, with the customer approving each payment via PSD2 strong customer
-    authentication over FAPI OAuth2 and mutual-TLS.
-- aid: natwest:natwest-confirmation-of-funds-api
-  name: NatWest Confirmation of Funds API
+  - type: OpenAPI
+    url: openapi/natwest-account-access-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-accounts-api
+  name: NatWest Group Accounts API
+  description: The Accounts API from NatWest Group — 2 operation(s) for accounts.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
   tags:
-  - Confirmation of Funds
-  - CBPII
-  - Open Banking
-  - PSD2
-  - Card Payments
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
-  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/cbpii
+  - Accounts
   properties:
-  - url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
-    type: Documentation
-  - url: openapi/natwest-confirmation-of-funds-openapi.yml
-    type: OpenAPI
-  description: Card Based Payment Instrument Issuer (CBPII) Confirmation of Funds API
-    conformant to the OBIE Read/Write Standard v3.1.11, letting authorised providers
-    establish a funds-confirmation consent and check whether sufficient funds are
-    available on a customer account under the "fundsconfirmations" OAuth scope,
-    secured with FAPI OAuth2/OIDC, PSD2 SCA, and mutual-TLS.
+  - type: OpenAPI
+    url: openapi/natwest-accounts-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-balances-api
+  name: NatWest Group Balances API
+  description: The Balances API from NatWest Group — 2 operation(s) for balances.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Balances
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-balances-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-beneficiaries-api
+  name: NatWest Group Beneficiaries API
+  description: The Beneficiaries API from NatWest Group — 2 operation(s) for beneficiaries.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Beneficiaries
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-beneficiaries-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-direct-debits-api
+  name: NatWest Group Direct Debits API
+  description: The Direct Debits API from NatWest Group — 2 operation(s) for direct debits.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Direct Debits
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-direct-debits-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-domestic-payments-api
+  name: NatWest Group Domestic Payments API
+  description: The Domestic Payments API from NatWest Group — 5 operation(s) for domestic payments.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Domestic Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-domestic-payments-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-domestic-scheduled-payments-api
+  name: NatWest Group Domestic Scheduled Payments API
+  description: >-
+    The Domestic Scheduled Payments API from NatWest Group — 4 operation(s) for domestic scheduled payments.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Domestic Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-domestic-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-domestic-standing-orders-api
+  name: NatWest Group Domestic Standing Orders API
+  description: >-
+    The Domestic Standing Orders API from NatWest Group — 4 operation(s) for domestic standing orders.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Domestic Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-domestic-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-file-payments-api
+  name: NatWest Group File Payments API
+  description: The File Payments API from NatWest Group — 6 operation(s) for file payments.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - File Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-file-payments-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-funds-confirmations-api
+  name: NatWest Group Funds Confirmations API
+  description: The Funds Confirmations API from NatWest Group — 3 operation(s) for funds confirmations.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Funds Confirmations
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-funds-confirmations-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-international-payments-api
+  name: NatWest Group International Payments API
+  description: >-
+    The International Payments API from NatWest Group — 5 operation(s) for international payments.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - International Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-international-payments-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-international-scheduled-payments-api
+  name: NatWest Group International Scheduled Payments API
+  description: >-
+    The International Scheduled Payments API from NatWest Group — 5 operation(s) for international scheduled
+    payments.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - International Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-international-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-international-standing-orders-api
+  name: NatWest Group International Standing Orders API
+  description: >-
+    The International Standing Orders API from NatWest Group — 4 operation(s) for international standing
+    orders.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - International Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-international-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-offers-api
+  name: NatWest Group Offers API
+  description: The Offers API from NatWest Group — 2 operation(s) for offers.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-offers-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-parties-api
+  name: NatWest Group Parties API
+  description: The Parties API from NatWest Group — 3 operation(s) for parties.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Parties
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-parties-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-payment-details-api
+  name: NatWest Group Payment Details API
+  description: The Payment Details API from NatWest Group — 7 operation(s) for payment details.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Payment Details
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-payment-details-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-products-api
+  name: NatWest Group Products API
+  description: The Products API from NatWest Group — 2 operation(s) for products.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-products-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-scheduled-payments-api
+  name: NatWest Group Scheduled Payments API
+  description: The Scheduled Payments API from NatWest Group — 2 operation(s) for scheduled payments.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-standing-orders-api
+  name: NatWest Group Standing Orders API
+  description: The Standing Orders API from NatWest Group — 2 operation(s) for standing orders.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-statements-api
+  name: NatWest Group Statements API
+  description: The Statements API from NatWest Group — 4 operation(s) for statements.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-statements-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
+- aid: natwest:natwest-transactions-api
+  name: NatWest Group Transactions API
+  description: The Transactions API from NatWest Group — 3 operation(s) for transactions.
+  humanURL: >-
+    https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/natwest-transactions-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/accounts
+  - type: Documentation
+    url: >-
+      https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb
+  - type: APIReference
+    url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
 common:
 - type: WellKnown
   url: well-known/natwest-well-known.yml
