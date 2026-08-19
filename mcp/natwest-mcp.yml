@@ -5,10 +5,9 @@ source: openapi/* (no official NatWest/Bank of APIs MCP server found as of 2026-
 server:
   name: natwest-open-banking
   transport: http
-  note: >-
-    Candidate only. NatWest does not publish a hosted MCP server. These tools map
-    OBIE read/write operations; any real deployment must enforce FAPI OAuth2 + PSD2
-    SCA consent, mutual-TLS, and x-jws-signature on writes (see conventions/).
+  note: Candidate only. NatWest does not publish a hosted MCP server. These tools map OBIE read/write
+    operations; any real deployment must enforce FAPI OAuth2 + PSD2 SCA consent, mutual-TLS, and x-jws-signature
+    on writes (see conventions/).
 tools:
 - name: list_accounts
   description: List accounts the PSU has consented to share.
@@ -49,3 +48,9 @@ tools:
 - name: check_funds_confirmation
   description: Confirm whether sufficient funds are available on an account.
   source_operation: openapi/natwest-confirmation-of-funds-openapi.yml#CreateFundsConfirmations
+deployment:
+  mode: none
+  verified: derived
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
