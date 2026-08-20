@@ -29,6 +29,15 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/natwest.pn
 tags:
 - Banking
 - Open Banking
+- Financial-Services
+- Payments
+- PSD2
+- FAPI
+- Fintech
+- Account Information
+tags_raw:
+- Banking
+- Open Banking
 - Financial Services
 - Payments
 - PSD2
@@ -67,6 +76,8 @@ apis:
     https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
   baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -389,6 +400,8 @@ apis:
     https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
   baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -473,6 +486,8 @@ apis:
     https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb
   baseURL: https://api.sandbox.natwest.com/open-banking/v3.1/aisp
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
