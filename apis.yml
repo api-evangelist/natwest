@@ -13,6 +13,18 @@ description: NatWest Group is a major UK retail and commercial bank (formerly Ro
   customer authentication, mutual-TLS client authentication, and dynamic client
   registration using OBIE/eIDAS certificates, with a full sandbox for onboarding
   and testing before production.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
