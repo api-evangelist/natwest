@@ -1,0 +1,114 @@
+slug: natwest
+provider: NatWest Group
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 11
+edges:
+- tag: Domestic Payments
+  spec_file: natwest-domestic-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.92
+  evidence: POST /domestic-payment-consents  Create Domestic Payment Consents; POST /domestic-payments  Create
+    Domestic Payments
+  reason: 'Open Banking PISP surface: capture and authorise a domestic payment instruction via consent
+    then submission — payment initiation.'
+- tag: Domestic Scheduled Payments
+  spec_file: natwest-domestic-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-scheduled-payments  Create Domestic Scheduled Payments
+  reason: Initiation and authorisation of future-dated domestic payment instructions; same PISP initiation
+    capability.
+- tag: Domestic Standing Orders
+  spec_file: natwest-domestic-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-standing-orders  Create Domestic Standing Orders
+  reason: Setting up recurring domestic payment instructions with consent — payment instruction capture
+    and authorisation.
+- tag: International Payments
+  spec_file: natwest-international-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-payments  Create International Payments; OBWriteInternationalConsent5
+  reason: Initiation of cross-border payment instructions including currency/exchange-rate data — cross-border
+    payment management.
+- tag: File Payments
+  spec_file: natwest-file-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payments  Create File Payments; GET /file-payments/{FilePaymentId}/report-file
+  reason: Bulk/batch payment file submission and consent — payment instruction capture, validation and
+    authorisation (file upload is the mechanism, payments are the substance).
+- tag: International Scheduled Payments
+  spec_file: natwest-international-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-scheduled-payments  Create International Scheduled Payments
+  reason: Future-dated cross-border payment initiation via Open Banking consents.
+- tag: International Standing Orders
+  spec_file: natwest-international-standing-orders-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-standing-orders  Create International Standing Orders
+  reason: Recurring cross-border payment instruction setup — international payment management.
+- tag: Parties
+  spec_file: natwest-parties-api-openapi.yml
+  capability_id: BC-1300.40
+  capability_id_l1: BC-1300
+  capability_name: Customer Information Management
+  confidence: 0.78
+  evidence: GET /accounts/{AccountId}/party  Get Parties; schemas FullLegalName, OBPartyRelationships1,
+    OBExternalPartyType1Code
+  reason: Returns the customer/party record and relationships associated with a banking account — banking
+    customer information data.
+- tag: Payment Details
+  spec_file: natwest-payment-details-api-openapi.yml
+  capability_id: BC-1340
+  capability_id_l1: BC-1340
+  capability_name: Payments & Card Management
+  confidence: 0.75
+  evidence: GET /domestic-payments/{DomesticPaymentId}/payment-details  Get Payment Details
+  reason: Retrieval of processing/status detail for submitted payments across all payment types; payments
+    capability, but spans initiation and processing so no single sub-capability.
+- tag: Products
+  spec_file: natwest-products-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.75
+  evidence: GET /products  Get Products; schemas OBPCAData1, OB_OverdraftFeeType1Code, OB_InterestRateType1Code_0
+  reason: Publishes banking product master data (PCA/BCA) with fees, overdraft and rate structures — banking
+    product catalogue.
+- tag: Funds Confirmations
+  spec_file: natwest-funds-confirmations-api-openapi.yml
+  capability_id: BC-1340
+  capability_id_l1: BC-1340
+  capability_name: Payments & Card Management
+  confidence: 0.7
+  evidence: POST /funds-confirmations  Create Funds Confirmation; OBFundsConfirmationConsent1
+  reason: CBPII confirmation-of-funds check against an account, used to support payment authorisation;
+    clearly payments domain but not cleanly one sub-capability.

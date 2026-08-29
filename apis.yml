@@ -515,6 +515,9 @@ apis:
   - type: APIReference
     url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
 common:
+- type: CapabilityMap
+  url: capabilities/natwest-capability-edges.yml
+  name: NatWest Group Business Capability Map
 - type: WellKnown
   url: well-known/natwest-well-known.yml
 - type: SecurityTxt
