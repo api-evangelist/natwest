@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/natwest/integrations
+- https://zapier.com/apps/natwest-group/integrations
+- https://n8n.io/integrations/natwest/
+- https://composio.dev/toolkits/natwest
+- https://monid.ai/tools/natwest
+checked:
+- https://composio.dev/toolkits/natwest
+- https://monid.ai/tools/natwest
+- https://n8n.io/integrations/natwest/
+- https://zapier.com/apps/natwest-group/integrations
+- https://zapier.com/apps/natwest/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
