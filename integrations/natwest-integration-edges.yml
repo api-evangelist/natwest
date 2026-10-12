@@ -1,5 +1,5 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/natwest/integrations
 - https://zapier.com/apps/natwest-group/integrations
@@ -10,9 +10,45 @@ checked:
 - https://composio.dev/toolkits/natwest
 - https://monid.ai/tools/natwest
 - https://n8n.io/integrations/natwest/
+- https://www.openbanking.org.uk/regulated-providers/natwest-markets-plc/
+- https://www.openbanking.org.uk/regulated-providers/natwest/
 - https://zapier.com/apps/natwest-group/integrations
 - https://zapier.com/apps/natwest/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: UK Open Banking
+  partner: null
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.openbanking.org.uk/regulated-providers/natwest-markets-plc/
+  contract_reference:
+    register: UK Open Banking regulated providers (OBL directory)
+    spec_file: null
+    role: Third Party Providers
+    registered_name: NatWest Markets Plc
+    register_id: https://register.fca.org.uk/s/firm?id=001b000000MfFIXAA3
+    matched_domain: natwest.com
+    api_families: null
+    detected_by: sweep-standard-registers.py
+    detected: '2026-10-12'
+- partner_name: UK Open Banking
+  partner: null
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.openbanking.org.uk/regulated-providers/natwest/
+  contract_reference:
+    register: UK Open Banking regulated providers (OBL directory)
+    spec_file: null
+    role: Account Providers
+    registered_name: National Westminster Bank Plc
+    register_id: https://register.fca.org.uk/s/firm?id=001b000000MfFIWAA3
+    matched_domain: natwest.com
+    api_families: null
+    detected_by: sweep-standard-registers.py
+    detected: '2026-10-12'
 templates: []
