@@ -21,6 +21,10 @@ checked:
 - https://www.canada.ca/en/financial-consumer-agency.html
 - https://www.consumerfinance.gov/compliance/supervision-examinations/institutions/
 - https://www.nmlsconsumeraccess.org/
+- https://github.com/finos/<repo>/blob/HEAD/MAINTAINERS.md
+- https://landscape.finos.org/data/full.json
+- https://raw.githubusercontent.com/finos/finos-landscape/e926c0ba0e77896a0718eb29b4f33ba5c210f335/landscape.yml
+- https://www.finos.org/members
 summary: null
 marketplace_apps: []
 edges:
@@ -110,4 +114,96 @@ edges:
       site''s own public guest JSON and the firm linked by the website the FCA states'
   detected_by: sweep-consumer-lending-licensing.py
   first_seen: '2026-10-21'
+- partner_name: FINOS projects (maintainer)
+  partner: finos
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: FINOS project maintainership
+  evidence: https://github.com/finos/cucumber-testing-steps/blob/HEAD/MAINTAINERS.md
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: FINOS project MAINTAINERS.md (github.com/finos/<repo>)
+    spec_file: null
+    standard: FINOS
+    role: finos-project-maintainer
+    registered_name: NatWest
+    registered_names:
+    - NatWest
+    matched_domain: natwest.com
+    matched_by: domain
+    matched_via:
+    - member-homepage
+    api_families:
+    - FDC3
+    - FDC3 Sail
+    - Fluxnova
+    - Git Proxy
+    - InnerSource Special Interest Group
+    - Remediation Standards
+    - Risk Navigator
+    api_families_basis: MAINTAINERS.md (maintains, not implements)
+    finos_projects:
+    - project: FDC3
+      maturity: graduated
+      repos:
+      - https://github.com/finos/cucumber-testing-steps/blob/HEAD/MAINTAINERS.md
+      - https://github.com/finos/fdc3-dotnet/blob/HEAD/MAINTAINERS.md
+      - https://github.com/finos/fdc3/blob/HEAD/MAINTAINERS.md
+    - project: FDC3 Sail
+      maturity: incubating
+      repos:
+      - https://github.com/finos/FDC3-Sail/blob/HEAD/MAINTAINERS.md
+    - project: Fluxnova
+      maturity: incubating
+      repos:
+      - https://github.com/finos/fluxnova-bpm-platform/blob/HEAD/MAINTAINERS.md
+    - project: Git Proxy
+      maturity: graduated
+      repos:
+      - https://github.com/finos/git-proxy/blob/HEAD/MAINTAINERS.md
+    - project: InnerSource Special Interest Group
+      maturity: sig
+      repos:
+      - https://github.com/finos/InnerSource/blob/HEAD/MAINTAINERS.md
+    - project: Remediation Standards
+      maturity: labs
+      repos:
+      - https://github.com/finos-osera/remediation-standards/blob/HEAD/MAINTAINERS.md
+    - project: Risk Navigator
+      maturity: labs
+      repos:
+      - https://github.com/finos-osera/risk-navigator/blob/HEAD/MAINTAINERS.md
+    signal_note: maintainership of FINOS projects (maintains, not implements); per-edge signal = projects maintained
+      (api_families), never the maintainer count
+    detected_by: sweep-finos-open-source-fintech.py
+    detected: '2026-10-22'
+  detected_by: sweep-finos-open-source-fintech.py
+  first_seen: '2026-10-22'
+- partner_name: FINOS (membership)
+  partner: finos
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: FINOS membership
+  evidence: https://www.finos.org/members
+  channel: standard-directory
+  relationship: standard-participant
+  partner_tier: Gold
+  contract_reference:
+    register: FINOS members (www.finos.org/members)
+    spec_file: null
+    standard: FINOS
+    role: finos-member
+    registered_name: NatWest
+    website: https://www.natwest.com/corporates.html
+    matched_domain: natwest.com
+    matched_by: domain
+    signal_note: 'participation only: FINOS membership is standard-participant evidence, not depth. The tier (partner_tier)
+      is CONTEXT, never counted'
+    detected_by: sweep-finos-open-source-fintech.py
+    detected: '2026-10-22'
+  detected_by: sweep-finos-open-source-fintech.py
+  first_seen: '2026-10-22'
 templates: []

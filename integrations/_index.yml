@@ -75,3 +75,96 @@
       site''s own public guest JSON and the firm linked by the website the FCA states'
   status: not-a-workflow
   arazzo: null
+- slug: natwest-finos-projects-maintainer
+  label: FINOS projects (maintainer)
+  partner: finos
+  partner_name: FINOS projects (maintainer)
+  category: FINOS project maintainership
+  type: register
+  channel: standard-directory
+  evidence: https://github.com/finos/cucumber-testing-steps/blob/HEAD/MAINTAINERS.md
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FINOS project MAINTAINERS.md (github.com/finos/<repo>)
+    spec_file: null
+    standard: FINOS
+    role: finos-project-maintainer
+    registered_name: NatWest
+    registered_names:
+    - NatWest
+    matched_domain: natwest.com
+    matched_by: domain
+    matched_via:
+    - member-homepage
+    api_families:
+    - FDC3
+    - FDC3 Sail
+    - Fluxnova
+    - Git Proxy
+    - InnerSource Special Interest Group
+    - Remediation Standards
+    - Risk Navigator
+    api_families_basis: MAINTAINERS.md (maintains, not implements)
+    finos_projects:
+    - project: FDC3
+      maturity: graduated
+      repos:
+      - https://github.com/finos/cucumber-testing-steps/blob/HEAD/MAINTAINERS.md
+      - https://github.com/finos/fdc3-dotnet/blob/HEAD/MAINTAINERS.md
+      - https://github.com/finos/fdc3/blob/HEAD/MAINTAINERS.md
+    - project: FDC3 Sail
+      maturity: incubating
+      repos:
+      - https://github.com/finos/FDC3-Sail/blob/HEAD/MAINTAINERS.md
+    - project: Fluxnova
+      maturity: incubating
+      repos:
+      - https://github.com/finos/fluxnova-bpm-platform/blob/HEAD/MAINTAINERS.md
+    - project: Git Proxy
+      maturity: graduated
+      repos:
+      - https://github.com/finos/git-proxy/blob/HEAD/MAINTAINERS.md
+    - project: InnerSource Special Interest Group
+      maturity: sig
+      repos:
+      - https://github.com/finos/InnerSource/blob/HEAD/MAINTAINERS.md
+    - project: Remediation Standards
+      maturity: labs
+      repos:
+      - https://github.com/finos-osera/remediation-standards/blob/HEAD/MAINTAINERS.md
+    - project: Risk Navigator
+      maturity: labs
+      repos:
+      - https://github.com/finos-osera/risk-navigator/blob/HEAD/MAINTAINERS.md
+    signal_note: maintainership of FINOS projects (maintains, not implements); per-edge signal = projects maintained
+      (api_families), never the maintainer count
+    detected_by: sweep-finos-open-source-fintech.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
+- slug: natwest-finos-membership
+  label: FINOS (membership)
+  partner: finos
+  partner_name: FINOS (membership)
+  category: FINOS membership
+  type: register
+  channel: standard-directory
+  evidence: https://www.finos.org/members
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FINOS members (www.finos.org/members)
+    spec_file: null
+    standard: FINOS
+    role: finos-member
+    registered_name: NatWest
+    website: https://www.natwest.com/corporates.html
+    matched_domain: natwest.com
+    matched_by: domain
+    signal_note: 'participation only: FINOS membership is standard-participant evidence, not depth. The tier (partner_tier)
+      is CONTEXT, never counted'
+    detected_by: sweep-finos-open-source-fintech.py
+    detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
