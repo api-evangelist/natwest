@@ -516,6 +516,8 @@ apis:
   - type: APIReference
     url: https://www.bankofapis.com/products/natwest-group-open-banking/payments
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/natwest-group/overview
 - type: CapabilityMap
   url: capabilities/natwest-capability-edges.yml
   name: NatWest Group Business Capability Map
