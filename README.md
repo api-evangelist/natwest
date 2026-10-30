@@ -1,4 +1,4 @@
-# NatWest Group (natwest)
+# NatWest Group
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,106 +64,168 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-NatWest Group is a major UK retail and commercial bank (formerly Royal Bank of Scotland Group) serving personal, business, and corporate customers across the NatWest, Royal Bank of Scotland, Ulster Bank, Coutts, and NatWest International brands. It operates a public developer platform branded the "Bank of APIs" that publishes UK Open Banking (CMA9 / PSD2) APIs — Account and Transaction Information, Payment Initiation, and Confirmation of Funds — conformant to the Open Banking Implementation Entity (OBIE) Read/Write API Standard, alongside premium and commercial APIs. Access is secured with FAPI-grade OAuth2/OIDC, PSD2 strong customer authentication, mutual-TLS client authentication, and dynamic client registration using OBIE/eIDAS certificates, with a full sandbox for onboarding and testing before production.
+NatWest Group is a major UK retail and commercial bank (formerly Royal Bank of Scotland Group) serving personal, business, and corporate customers across the NatWest, Royal Bank of Scotland, Ulster Bank, Coutts, and NatWest International brands. It operates a public developer platform branded the "Bank of APIs" that publishes UK Open Banking (CMA9 / PSD2) APIs - Account and Transaction Information, Payment Initiation, and Confirmation of Funds - conformant to the Open Banking Implementation Entity (OBIE) Read/Write API Standard, alongside premium and commercial APIs. Access is secured with FAPI-grade OAuth2/OIDC, PSD2 strong customer authentication, mutual-TLS client authentication, and dynamic client registration using OBIE/eIDAS certificates, with a full sandbox for onboarding and testing before production.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/natwest/refs/heads/main/apis.yml)
+**Areas:** Banking · Open Banking · Financial Services · Payments · PSD2 · FAPI · Fintech · Account Information
 
-## Tags
+## NatWest Group on APIs.io
 
-- Banking
-- Open Banking
-- Financial Services
-- Payments
-- PSD2
-- FAPI
-- Fintech
-- Account Information
+Everything profiled for NatWest Group is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/natwest/](https://apis.io/providers/natwest/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (21)
 
-- **Created:** 2026-07-20
-- **Modified:** 2026-07-20
+- [NatWest Group Account Access API](https://apis.io/apis/natwest/natwest-account-access-api/) — The Account Access API from NatWest Group — 2 operation(s) for account access.
+- [NatWest Group Accounts API](https://apis.io/apis/natwest/natwest-accounts-api/) — The Accounts API from NatWest Group — 2 operation(s) for accounts.
+- [NatWest Group Balances API](https://apis.io/apis/natwest/natwest-balances-api/) — The Balances API from NatWest Group — 2 operation(s) for balances.
+- [NatWest Group Beneficiaries API](https://apis.io/apis/natwest/natwest-beneficiaries-api/) — The Beneficiaries API from NatWest Group — 2 operation(s) for beneficiaries.
+- [NatWest Group Direct Debits API](https://apis.io/apis/natwest/natwest-direct-debits-api/) — The Direct Debits API from NatWest Group — 2 operation(s) for direct debits.
+- [NatWest Group Domestic Payments API](https://apis.io/apis/natwest/natwest-domestic-payments-api/) — The Domestic Payments API from NatWest Group — 5 operation(s) for domestic payments.
+- [NatWest Group Domestic Scheduled Payments API](https://apis.io/apis/natwest/natwest-domestic-scheduled-payments-api/) — The Domestic Scheduled Payments API from NatWest Group — 4 operation(s) for domestic scheduled payments.
+- [NatWest Group Domestic Standing Orders API](https://apis.io/apis/natwest/natwest-domestic-standing-orders-api/) — The Domestic Standing Orders API from NatWest Group — 4 operation(s) for domestic standing orders.
+- [NatWest Group File Payments API](https://apis.io/apis/natwest/natwest-file-payments-api/) — The File Payments API from NatWest Group — 6 operation(s) for file payments.
+- [NatWest Group Funds Confirmations API](https://apis.io/apis/natwest/natwest-funds-confirmations-api/) — The Funds Confirmations API from NatWest Group — 3 operation(s) for funds confirmations.
+- [NatWest Group International Payments API](https://apis.io/apis/natwest/natwest-international-payments-api/) — The International Payments API from NatWest Group — 5 operation(s) for international payments.
+- [NatWest Group International Scheduled Payments API](https://apis.io/apis/natwest/natwest-international-scheduled-payments-api/) — The International Scheduled Payments API from NatWest Group — 5 operation(s) for international scheduled payments.
+- [NatWest Group International Standing Orders API](https://apis.io/apis/natwest/natwest-international-standing-orders-api/) — The International Standing Orders API from NatWest Group — 4 operation(s) for international standing orders.
+- [NatWest Group Offers API](https://apis.io/apis/natwest/natwest-offers-api/) — The Offers API from NatWest Group — 2 operation(s) for offers.
+- [NatWest Group Parties API](https://apis.io/apis/natwest/natwest-parties-api/) — The Parties API from NatWest Group — 3 operation(s) for parties.
+- [NatWest Group Payment Details API](https://apis.io/apis/natwest/natwest-payment-details-api/) — The Payment Details API from NatWest Group — 7 operation(s) for payment details.
+- [NatWest Group Products API](https://apis.io/apis/natwest/natwest-products-api/) — The Products API from NatWest Group — 2 operation(s) for products.
+- [NatWest Group Scheduled Payments API](https://apis.io/apis/natwest/natwest-scheduled-payments-api/) — The Scheduled Payments API from NatWest Group — 2 operation(s) for scheduled payments.
+- [NatWest Group Standing Orders API](https://apis.io/apis/natwest/natwest-standing-orders-api/) — The Standing Orders API from NatWest Group — 2 operation(s) for standing orders.
+- [NatWest Group Statements API](https://apis.io/apis/natwest/natwest-statements-api/) — The Statements API from NatWest Group — 4 operation(s) for statements.
+- [NatWest Group Transactions API](https://apis.io/apis/natwest/natwest-transactions-api/) — The Transactions API from NatWest Group — 3 operation(s) for transactions.
 
-## APIs
+### Published properties
 
-### NatWest Account and Transaction API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Account Information Service Provider (AISP) API conformant to the OBIE Read/Write Standard v3.1.11, exposing account access consents, account details, balances, transactions, beneficiaries, standing orders, direct debits, and statements under the "accounts" OAuth scope. Requires FAPI OAuth2/OIDC with PSD2 strong customer authentication and mutual-TLS.
+#### MCP servers (1)
 
-- **Human URL:** [https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb](https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb)
-- **Base URL:** `https://api.sandbox.natwest.com/open-banking/v3.1/aisp`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [natwest-open-banking](https://apis.io/servers/natwest/natwest-open-banking/)
 
-- Account Information
-- Transactions
-- AISP
-- Open Banking
-- PSD2
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb)
-- [API Reference](https://www.bankofapis.com/products/natwest-group-open-banking/accounts)
-- [OpenAPI](openapi/natwest-account-transaction-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Natwest Agentic Access](https://apis.io/agentic-access/natwest/natwest-agentic-access/)
 
-### NatWest Payment Initiation API
+#### Collections (21)
 
-Payment Initiation Service Provider (PISP) API conformant to the OBIE Read/Write Standard v3.1.11, supporting domestic payments (including CHAPS and balance transfers), domestic scheduled payments, international payments, international scheduled payments, and file payments under the "payments" OAuth scope, with the customer approving each payment via PSD2 strong customer authentication over FAPI OAuth2 and mutual-TLS.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb](https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb)
-- **Base URL:** `https://api.sandbox.natwest.com/open-banking/v3.1/pisp`
+- [Account and Transaction API Specification Account Access API](https://apis.io/collections/natwest/open-natwest-account-access-api/)
+- [Account and Transaction API Specification Account Access Accounts API](https://apis.io/collections/natwest/open-natwest-accounts-api/)
+- [Account and Transaction API Specification Account Access Balances API](https://apis.io/collections/natwest/open-natwest-balances-api/)
+- [Account and Transaction API Specification Account Access Beneficiaries API](https://apis.io/collections/natwest/open-natwest-beneficiaries-api/)
+- [Account and Transaction API Specification Account Access Direct Debits API](https://apis.io/collections/natwest/open-natwest-direct-debits-api/)
+- [Account and Transaction API Specification Account Access Domestic Payments API](https://apis.io/collections/natwest/open-natwest-domestic-payments-api/)
+- [Account and Transaction API Specification Account Access Domestic Scheduled Payments API](https://apis.io/collections/natwest/open-natwest-domestic-scheduled-payments-api/)
+- [Account and Transaction API Specification Account Access Domestic Standing Orders API](https://apis.io/collections/natwest/open-natwest-domestic-standing-orders-api/)
+- [Account and Transaction API Specification Account Access File Payments API](https://apis.io/collections/natwest/open-natwest-file-payments-api/)
+- [Account and Transaction API Specification Account Access Funds Confirmations API](https://apis.io/collections/natwest/open-natwest-funds-confirmations-api/)
+- [Account and Transaction API Specification Account Access International Payments API](https://apis.io/collections/natwest/open-natwest-international-payments-api/)
+- [Account and Transaction API Specification Account Access International Scheduled Payments API](https://apis.io/collections/natwest/open-natwest-international-scheduled-payments-api/)
+- [Account and Transaction API Specification Account Access International Standing Orders API](https://apis.io/collections/natwest/open-natwest-international-standing-orders-api/)
+- [Account and Transaction API Specification Account Access Offers API](https://apis.io/collections/natwest/open-natwest-offers-api/)
+- [Account and Transaction API Specification Account Access Parties API](https://apis.io/collections/natwest/open-natwest-parties-api/)
+- [Account and Transaction API Specification Account Access Payment Details API](https://apis.io/collections/natwest/open-natwest-payment-details-api/)
+- [Account and Transaction API Specification Account Access Products API](https://apis.io/collections/natwest/open-natwest-products-api/)
+- [Account and Transaction API Specification Account Access Scheduled Payments API](https://apis.io/collections/natwest/open-natwest-scheduled-payments-api/)
+- [Account and Transaction API Specification Account Access Standing Orders API](https://apis.io/collections/natwest/open-natwest-standing-orders-api/)
+- [Account and Transaction API Specification Account Access Statements API](https://apis.io/collections/natwest/open-natwest-statements-api/)
+- [Account and Transaction API Specification Account Access Transactions API](https://apis.io/collections/natwest/open-natwest-transactions-api/)
 
-#### Tags
+#### Overlays (3)
 
-- Payments
-- Payment Initiation
-- PISP
-- Open Banking
-- PSD2
+OpenAPI overlays, including conversational phrasing for each operation.
 
-#### Properties
+- [Natwest Account Transaction Overlay](https://apis.io/overlays/natwest/natwest-account-transaction-overlay/)
+- [Natwest Confirmation Of Funds Overlay](https://apis.io/overlays/natwest/natwest-confirmation-of-funds-overlay/)
+- [Natwest Payment Initiation Overlay](https://apis.io/overlays/natwest/natwest-payment-initiation-overlay/)
 
-- [Documentation](https://www.bankofapis.com/products/natwest-group-open-banking/payments/documentation/nwb)
-- [API Reference](https://www.bankofapis.com/products/natwest-group-open-banking/payments)
-- [OpenAPI](openapi/natwest-payment-initiation-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+#### Security (3)
 
-### NatWest Confirmation of Funds API
+Authentication, trust centre, and vulnerability disclosure.
 
-Card Based Payment Instrument Issuer (CBPII) Confirmation of Funds API conformant to the OBIE Read/Write Standard v3.1.11, letting authorised providers establish a funds-confirmation consent and check whether sufficient funds are available on a customer account under the "fundsconfirmations" OAuth scope, secured with FAPI OAuth2/OIDC, PSD2 SCA, and mutual-TLS.
+- [Natwest Authentication](https://apis.io/security/natwest/natwest-authentication/)
+- [Natwest Domain Security](https://apis.io/security/natwest/natwest-domain-security/)
+- [Natwest Vulnerability Disclosure](https://apis.io/security/natwest/natwest-vulnerability-disclosure/)
 
-- **Human URL:** [https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb](https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb)
-- **Base URL:** `https://api.sandbox.natwest.com/open-banking/v3.1/cbpii`
+#### OAuth scopes (1)
 
-#### Tags
+The permissions the API asks for.
 
-- Confirmation of Funds
-- CBPII
-- Open Banking
-- PSD2
-- Card Payments
+- [Natwest Scopes](https://apis.io/scopes/natwest/natwest-scopes/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://www.bankofapis.com/products/natwest-group-open-banking/accounts/documentation/nwb)
-- [OpenAPI](openapi/natwest-confirmation-of-funds-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.natwest.com/)
-- [Developer Portal](https://www.bankofapis.com/)
 - [Documentation](https://www.bankofapis.com/documentation)
-- [Getting Started](https://www.bankofapis.com/getting-started)
-- [Authentication](https://www.bankofapis.com/documentation/security)
-- [GitHub Organization](https://github.com/bankofapis)
-- [LinkedIn](https://www.linkedin.com/company/natwest-group)
-- [Blog](https://www.bankofapis.com/community/articles)
+- [Getting started](https://www.bankofapis.com/getting-started)
+- [Sign up](https://www.bankofapis.com/register)
 - [Support](https://www.bankofapis.com/support)
-- [Terms of Service](https://www.bankofapis.com/terms-and-conditions)
-- [Privacy Policy](https://www.bankofapis.com/privacy-notice)
-- [Sign Up](https://www.bankofapis.com/register)
+- [Blog](https://www.bankofapis.com/community/articles)
+- [Security](https://bugcrowd.com/natwest-vdp)
+- [Compliance](https://www.bankofapis.com/products/natwest-group-open-banking/fca-service-metrics)
+- [Terms of service](https://www.bankofapis.com/terms-and-conditions)
+- [Privacy policy](https://www.bankofapis.com/privacy-notice)
+- [GitHub](https://github.com/bankofapis)
+- [Status](https://www.bankofapis.com/performance/service-interruptions)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 44.4 |
+| Contract governance | 18.2 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 8.9 |
+| Access clarity | 0.0 |
+
+**Agent readiness 43.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | verified |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 36.2** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/natwest/](https://apis.io/providers/natwest/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for NatWest Group: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/natwest/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
